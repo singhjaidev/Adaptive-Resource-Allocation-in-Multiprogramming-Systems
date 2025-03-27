@@ -19,3 +19,28 @@ document
     processList.push(process);
     alert("✅ Process Added!");
   });
+
+// Function to display Gantt Chart
+function displayGanttChart() {
+  let ganttChart = document.getElementById("ganttChart");
+  ganttChart.innerHTML = "";
+  
+  processList.sort((a, b) => a.priority - b.priority);
+  
+  processList.forEach((process) => {
+    let processBox = document.createElement("div");
+    processBox.classList.add("process-box");
+    processBox.textContent = `P${process.id}`;
+    ganttChart.appendChild(processBox);
+  });
+}
+
+document
+  .getElementById("startSimulation")
+  .addEventListener("click", function () {
+    if (processList.length === 0) {
+      alert("⚠️ No processes to simulate!");
+      return;
+    }
+    displayGanttChart();
+  });
