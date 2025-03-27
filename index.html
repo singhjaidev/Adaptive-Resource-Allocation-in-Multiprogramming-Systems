@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Adaptive Resource Allocation</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Adaptive Resource Allocation</h1>
+
+      <!-- Process Input Form (Module 1) -->
+      <h2>Enter Process Details</h2>
+      <form id="processForm">
+        <input type="number" id="pid" placeholder="Process ID" required />
+        <input type="number" id="burstTime" placeholder="Burst Time" required />
+        <input
+          type="number"
+          id="memoryReq"
+          placeholder="Memory Required"
+          required
+        />
+        <input
+          type="number"
+          id="priority"
+          placeholder="Priority (Higher = More Priority)"
+          required
+        />
+        <button type="submit">Add Process</button>
+      </form>
+    </div>
+  </body>
+</html>
