@@ -1,0 +1,39 @@
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  background-color: #f4f4f4;
+}
+
+.container {
+  width: 60%;
+  margin: auto;
+  background: white;
+  padding: 20px;
+  box-shadow: 0px 0px 10px #aaa;
+}
+
+form input,
+form button {
+  display: block;
+  margin: 10px auto;
+  padding: 8px;
+  font-size: 16px;
+}
+
+#ganttChart {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.process-box {
+  width: 100px;
+  height: 40px;
+  margin: 5px;
+  text-align: center;
+  padding-top: 10px;
+  font-weight: bold;
+  background-color: lightblue;
+  border: 1px solid black;
+}
