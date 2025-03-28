@@ -10,7 +10,7 @@ def home():
     return "✅ Server is running successfully!"
 
 # Test route for debugging  
-@app.route("/test", methods=["GET"])
+@app.route("/test", methods=["GET"]) 
 def test():
     return jsonify({"message": "Test route is working!"})
 
