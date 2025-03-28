@@ -6,41 +6,138 @@
     <title>Adaptive Resource Allocation</title>
     <link rel="stylesheet" href="styles.css" />
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
-    <div class="container">
-      <h1>Adaptive Resource Allocation in Multiprogramming Systems</h1>
+    <div class="noise"></div>
+    <div class="app-container">
+      <nav class="top-nav">
+        <div class="nav-content">
+          <div class="brand">
+            <div class="logo-container">
+              <div class="logo-circle"></div>
+              <div class="logo-ring"></div>
+            </div>
+            <div class="brand-text">
+              <h1>ProcessFlow</h1>
+              <p class="nav-subtitle">Enterprise Resource Management</p>
+            </div>
+          </div>
+          <div class="system-status">
+            <div class="status-indicator">
+              <span class="pulse"></span>
+              System Active
+            </div>
+          </div>
+        </div>
+      </nav>
 
-      <!-- Process Input Form (Module 1) -->
-      <h2>Enter Process Details</h2>
-      <form id="processForm">
-        <input type="number" id="pid" placeholder="Process ID" required />
-        <input type="number" id="burstTime" placeholder="Burst Time" required />
-        <input
-          type="number"
-          id="memoryReq"
-          placeholder="Memory Required"
-          required
-        />
-        <input
-          type="number"
-          id="priority"
-          placeholder="Priority (Higher = More Priority)"
-          required
-        />
-        <button type="submit">Add Process</button>
-      </form>
+      <main class="main-content">
+        <div class="sidebar">
+          <div class="glass-card process-card">
+            <div class="card-header">
+              <div class="header-content">
+                <h2>Process Configuration</h2>
+                <span class="badge">System Input</span>
+              </div>
+              <div class="header-line"></div>
+            </div>
+            <form id="processForm" class="process-form">
+              <div class="input-group">
+                <label for="pid">Process Identifier</label>
+                <div class="input-wrapper">
+                  <input type="number" id="pid" required />
+                  <div class="input-focus"></div>
+                </div>
+              </div>
+              <div class="input-group">
+                <label for="burstTime">Execution Time</label>
+                <div class="input-wrapper">
+                  <input type="number" id="burstTime" required />
+                  <div class="input-focus"></div>
+                </div>
+              </div>
+              <div class="input-group">
+                <label for="memoryReq">Memory Allocation</label>
+                <div class="input-wrapper">
+                  <input type="number" id="memoryReq" required />
+                  <div class="input-focus"></div>
+                </div>
+              </div>
+              <div class="input-group">
+                <label for="priority">Priority Index</label>
+                <div class="input-wrapper">
+                  <input type="number" id="priority" required />
+                  <div class="input-focus"></div>
+                </div>
+              </div>
+              <button type="submit" class="btn btn-primary">
+                <span class="btn-icon">+</span>
+                Initialize Process
+              </button>
+            </form>
+            <button id="startSimulation" class="btn btn-secondary">
+              <div class="btn-content">
+                <span class="btn-icon">▶</span>
+                Execute Simulation
+              </div>
+              <div class="btn-glow"></div>
+            </button>
+          </div>
+        </div>
 
-      <button id="startSimulation">Start Simulation</button>
+        <div class="content-area">
+          <div class="glass-card timeline-section">
+            <div class="section-header">
+              <div class="header-content">
+                <h2>Execution Timeline</h2>
+                <span class="badge">Real-time Visualization</span>
+              </div>
+              <div class="header-line"></div>
+            </div>
+            <div id="ganttChart" class="gantt-container">
+              <div class="timeline-placeholder">
+                <div class="placeholder-text">Awaiting Process Data</div>
+                <div class="placeholder-animation">
+                  <div class="circle"></div>
+                  <div class="circle"></div>
+                  <div class="circle"></div>
+                </div>
+              </div>
+            </div>
+          </div>
 
-      <!-- Execution Timeline (Gantt Chart) -->
-      <h2>Execution Timeline</h2>
-      <div id="ganttChart"></div>
-
-      <!-- Resource Usage Graphs -->
-      <h2>Resource Usage</h2>
-      <canvas id="cpuChart"></canvas>
-      <canvas id="memoryChart"></canvas>
+          <div class="metrics-grid">
+            <div class="glass-card metric-card">
+              <div class="section-header">
+                <div class="header-content">
+                  <h2>CPU Utilization</h2>
+                  <span class="badge">Performance Metrics</span>
+                </div>
+                <div class="header-line"></div>
+              </div>
+              <div class="chart-container">
+                <canvas id="cpuChart"></canvas>
+              </div>
+            </div>
+            <div class="glass-card metric-card">
+              <div class="section-header">
+                <div class="header-content">
+                  <h2>Memory Distribution</h2>
+                  <span class="badge">Resource Analytics</span>
+                </div>
+                <div class="header-line"></div>
+              </div>
+              <div class="chart-container">
+                <canvas id="memoryChart"></canvas>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
     </div>
 
     <script src="script.js"></script>
