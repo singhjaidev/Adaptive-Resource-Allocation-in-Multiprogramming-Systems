@@ -4,7 +4,7 @@ from flask_cors import CORS  # Import CORS
 app = Flask(__name__)
 CORS(app)  # Enable CORS for all routes
 
-# Home route to check if the server is running
+# Home route to check if the server is running 
 @app.route("/")
 def home():
     return "✅ Server is running successfully!"
